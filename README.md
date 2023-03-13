@@ -57,9 +57,10 @@ docker run -e BOKEH_SECRET_KEY={see below} \
 
 To "protect" the bokeh server, we use signed sessions so you need to generate a bokeh secret key by doing `bokeh secret`. You can run this command in any environment just make sure it matches the bokeh version in the images (2.4.3)
 
+The Caddyfile in this repository also shows the config used to set the reverse proxies to the docker containers.
+
 
 ##### TODO
 - [ ] Write about pickling of archives
 - [ ] Use docker-compose to make deploying a bit more cleaner
-- [ ] Couple of lines about setting reverse proxy?
 - [ ] There is a vendored copy of bigbang in this repo which needs to be removed when it's possible to install it from conda/pip easily. The micromamba image wasn't working well with doing a git install.
