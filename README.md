@@ -62,3 +62,4 @@ To "protect" the bokeh server, we use signed sessions so you need to generate a 
 - [ ] Write about pickling of archives
 - [ ] Use docker-compose to make deploying a bit more cleaner
 - [ ] Couple of lines about setting reverse proxy?
+- [ ] There is a vendored copy of bigbang in this repo which needs to be removed when it's possible to install it from conda/pip easily. The micromamba image wasn't working well with doing a git install.
