@@ -1,0 +1,7 @@
+standardsandgovernance.net {
+        reverse_proxy 127.0.0.1:8000
+}
+
+dashboard.standardsandgovernance.net {
+        reverse_proxy 127.0.0.1:5006
+}
