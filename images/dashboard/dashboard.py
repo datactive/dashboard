@@ -104,21 +104,21 @@ You can also run these analyses, and many more, by locally installing [BigBang](
 
 plot_daily_activity_boxed = pn.Column(
     pn.pane.Markdown(
-        "#### In this graph you see the activity over the lifespan of the mailinglist From this you can understand for how long the Working Group exists and how active it has been, and whether there have been any peeks in activity."
+        "#### In this graph you see the activity over the lifespan of the mailinglist. From this you can understand for how long the Working Group exists and how active it has been, and whether there have been any peeks in activity."
     ),
     plot_daily_activity,
 )
 
 get_top_senders_boxed = pn.Column(
     pn.pane.Markdown(
-        "#### This table shows the information of the top senders to the mailinglist, such as their name, their emailaddress, and the amount of email they have sent."
+        "#### This table shows the information of the top senders to the mailinglist, such as their name, their email address, and the amount of email they have sent."
     ),
     get_top_senders,
 )
 
 plot_interactions_boxed = pn.Column(
     pn.pane.Markdown(
-        "#### This graph show the interaction among the post posters to the working group mailinglist. It allows you to understand who sents the most mails, and to whom they are responding. The bigger the size of the node, the more emails they have sent. If you click on the node, you will the emailaddress of the sender and the amount of emails they have sent"
+        "#### This graph shows the interaction among the post posters to the working group mailinglist. It allows you to understand who sents the most mails, and to whom they are responding. The bigger the size of the node, the more emails they have sent. If you click on the node, you will the emailaddress of the sender and the amount of emails they have sent"
     ),
     plot_interactions,
 )
