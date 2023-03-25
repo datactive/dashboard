@@ -118,7 +118,7 @@ get_top_senders_boxed = pn.Column(
 
 plot_interactions_boxed = pn.Column(
     pn.pane.Markdown(
-        "#### This graph shows the interaction among the post posters to the working group mailinglist. It allows you to understand who sents the most mails, and to whom they are responding. The bigger the size of the node, the more emails they have sent. If you click on the node, you will the emailaddress of the sender and the amount of emails they have sent"
+        "#### This graph shows the interaction among the post posters to the working group mailinglist. It allows you to understand who sents the most mails, and to whom they are responding. The bigger the size of the node, the more emails they have sent. If you click on the node, you will see the emailaddress of the sender and the amount of emails they have sent"
     ),
     plot_interactions,
 )
