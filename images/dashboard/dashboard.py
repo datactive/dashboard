@@ -24,11 +24,11 @@ preload_archive = pn.state.as_cached("data", load_data)
 
 
 archive_select_widget = pn.widgets.AutocompleteInput(
-    name="Analyse archive with BigBang",
+    name="Select the working group(s) you are interested in",
     options=list(preloads),
     value="httpbisa",
     case_sensitive=False,
-    placeholder="Select an archive.",
+    placeholder="Select an archive",
 )
 
 
@@ -93,31 +93,32 @@ def plot_interactions(archive_select):
 
 archive_select_widget_boxed = pn.Column(
     pn.pane.Markdown(
-        "## Select one of the archives to analyse it (eg. tls-reg-review)"
+        "### Welcome to the Standards and Governance Dashboard
+
+With this dashboard we help you to analyze publicly available data about standard-setting. Currently we are allowing you to analyze data from mailinglist conversations and other data to get deeper insight into standard-setting processes.
+
+You can also run these analyses, and many more, by locally installing [BigBang](https://github.com/datactive/bigbang)."
     ),
     archive_select_widget,
 )
 
 plot_daily_activity_boxed = pn.Column(
     pn.pane.Markdown(
-        "#### Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, \
-                                                       lectus ut suscipit efficitur, orci erat gravida ligula, sed vestibulum nisi dui nec lorem."
+        "#### In this graph you see the activity over the lifespan of the mailinglist From this you can understand for how long the Working Group exists and how active it has been, and whether there have been any peeks in activity."
     ),
     plot_daily_activity,
 )
 
 get_top_senders_boxed = pn.Column(
     pn.pane.Markdown(
-        "#### Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, \
-                                                       lectus ut suscipit efficitur, orci erat gravida ligula, sed vestibulum nisi dui nec lorem."
+        "#### This table shows the information of the top senders to the mailinglist, such as their name, their emailaddress, and the amount of email they have sent."
     ),
     get_top_senders,
 )
 
 plot_interactions_boxed = pn.Column(
     pn.pane.Markdown(
-        "#### Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, \
-                                                       lectus ut suscipit efficitur, orci erat gravida ligula, sed vestibulum nisi dui nec lorem."
+        "#### This graph show the interaction among the post posters to the working group mailinglist. It allows you to understand who sents the most mails, and to whom they are responding. The bigger the size of the node, the more emails they have sent. If you click on the node, you will the emailaddress of the sender and the amount of emails they have sent"
     ),
     plot_interactions,
 )
