@@ -10,12 +10,14 @@ This will probably require a paid dockerhub acccount.
 
 ### Steps to build image locally and deploy on the server
 
-- ~~podman and docker can be used interchangeably~~
 - Currently the images are hosted on my dockerhub account (mriduls). To push these images to a personal dockerhub account you would need to change the name of the image while building them locally.
 - Make sure you are in the `images` directory.
-- These dashboard image build will fail! As I have not pushed the pickle files to github. Contact me to get these files.
 
 To build the dashboard image:
+
+First, get the preload_archive pickles (`preload_archive.pickle` and `preload_list.pickle`) from Mridul and put them in the `images/dashboard` directory.
+
+Then run:
 
 ```
 docker build --platform linux/amd64 -t mriduls/dashboard_bigbang -f dashboard/Dockerfile dashboard/
