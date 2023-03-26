@@ -61,6 +61,8 @@ To "protect" the bokeh server, we use signed sessions so you need to generate a 
 
 The Caddyfile in this repository also shows the config used to set the reverse proxies to the docker containers.
 
+The login page should appear on port 8000.
+
 
 ##### TODO
 - [ ] Write about pickling of archives
