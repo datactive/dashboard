@@ -7,6 +7,8 @@ The application uses [Caddy](https://caddyserver.com/) as the webserver. This is
 Currently the docker containers are deployed manually on the server, there isn't a continuous deployment pipeline from github to the server.
 This will probably require a paid dockerhub acccount.
 
+You will need to `pip install bokeh`.
+
 
 ### Steps to build image locally and deploy on the server
 
