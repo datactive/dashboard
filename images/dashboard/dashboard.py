@@ -61,7 +61,7 @@ def plot_wordtrends(archive_select):
     window = 5
     colors = 'rgbkm'
     for i in range(len(checkwords)):
-        smooth_sums = archives_data_sums.rolling(window).mean()
+        smooth_sums = trends.rolling(window).mean()
         smooth_sums[checkwords[i]].hvplot.line(x='Date',value_label=checkwords[i])
 
 
