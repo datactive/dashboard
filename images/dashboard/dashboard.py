@@ -128,7 +128,7 @@ plot_daily_activity_boxed = pn.Column(
 
 plot_wordtrends_boxed = pn.Column(
     pn.pane.Markdown(
-        "#### it computes and plot word counts over time, on aggregated mailing lists' data. it exports emails that contains selected words"
+        "#### This plot show the occurrence of selected words in the mailing list over time."
     ),
     plot_wordtrends,
 )
@@ -178,7 +178,7 @@ template.main.append(
     pn.Column(
         archive_select_widget_boxed,
         pn.Row(plot_daily_activity_boxed, plot_interactions_boxed),
-        plot_wordtrends_boxed,
+        pn.Row(plot_wordtrends_boxed),
         get_top_senders_boxed,
     )
 )
