@@ -14,9 +14,11 @@ COPY ./dashboard.py /code/dashboard.py
 COPY ./preload_archive.pickle /code/preload_archive.pickle
 COPY ./preload_list.pickle /code/preload_list.pickle
 COPY ./bigbangvendorgraph.py /code/bigbangvendorgraph.py
+COPY ./bigbangwordtrend.py /code/bigbangwordtrend.py
 COPY ./bigbang /code/bigbang
 
 USER root
+RUN python -m nltk.downloader popular
 RUN python -m pip install -e /code/bigbang/
 
 CMD ["panel", "serve","--warm", "dashboard.py", "--session-ids", "external-signed", "--port", "5006"]

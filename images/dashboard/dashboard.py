@@ -6,6 +6,7 @@ import hvplot.pandas
 import hvplot.networkx as hvnx
 from datetime import date
 import bigbangvendorgraph as graph
+import bigbangwordtrend as wordtrend
 import networkx as nx
 import matplotlib.pyplot as plt
 import pickle
@@ -49,6 +50,20 @@ def get_top_senders(archive_select):
     archive = preload_archive[archive_select]
     top_senders = archive.get_activity().sum().sort_values(ascending=False)[:15]
     return top_senders.rename("Number of Emails")
+
+
+@pn.depends(archive_select=archive_select_widget)
+def plot_wordtrends(archive_select):
+    archive = preload_archive[archive_select]
+    df = archive.data.copy()
+    trends = wordtrend.get_word_trends(df)
+    checkwords = ["protocol","middlebox","standard","chair"]
+    window = 5
+    colors = 'rgbkm'
+    for i in range(len(checkwords)):
+        smooth_sums = trends.rolling(window).mean()
+        smooth_sums[checkwords[i]].hvplot.line(x='Date',value_label=checkwords[i])
+
 
 
 @pn.depends(archive_select=archive_select_widget)
@@ -111,6 +126,13 @@ plot_daily_activity_boxed = pn.Column(
     plot_daily_activity,
 )
 
+plot_wordtrends_boxed = pn.Column(
+    pn.pane.Markdown(
+        "#### This plot show the occurrence of selected words in the mailing list over time."
+    ),
+    plot_wordtrends,
+)
+
 get_top_senders_boxed = pn.Column(
     pn.pane.Markdown(
         "#### This table shows the information of the top senders to the mailing list, such as their name, their email address, and the amount of email they have sent."
@@ -156,6 +178,7 @@ template.main.append(
     pn.Column(
         archive_select_widget_boxed,
         pn.Row(plot_daily_activity_boxed, plot_interactions_boxed),
+        pn.Row(plot_wordtrends_boxed),
         get_top_senders_boxed,
     )
 )
